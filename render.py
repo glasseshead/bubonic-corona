@@ -63,7 +63,9 @@ def renderField(canvas):
 
     # render tiles, bot
     renderTiles(canvas)
-    renderBot(config.robotPosX + 160, config.robotPosY + 80, config.robotPosTheta, canvas)
+
+    # until i actually need this i will keep this commented out
+    # renderBot(config.robotPosX + 160, config.robotPosY + 80, config.robotPosTheta, canvas)
 
     # render planned points
     renderPath(config.pathPoints, canvas)

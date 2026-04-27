@@ -16,10 +16,10 @@ pygame.init()
 canvas = pygame.display.set_mode((config.canvasX, config.canvasY))
 pygame.display.set_caption('Corona for Bubonic')
 
-# read path from path.cpp
-config.pathPoints = cppread.cppRead()
-
-while True:    
+while True:
+    # read path from path.cpp
+    config.pathPoints = cppread.cppRead()
+    
     # boundary check
     boundary.bounds()
 
