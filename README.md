@@ -1,34 +1,33 @@
-# Bubonic by glasseshead (David Sun)
-A solo-programmed VEX V5 program made with Python for Autonomous programming using a digital plottable field.
-Made for use with Arson, Yaay! architectures and Plague? Where? by David
+# Corona For Bubonic by glasseshead (David Sun)
+A solo-programmed VEX V5 program made with Python for Autonomous visualization using a digital plottable field.
+Made for use with Plague? Where? and Bubonic by David
 
-Thanks Zachary from 5776K; Kabir & Norrel from 5776A; Jerry from CMAA
+Thanks Zachary from 5776K; Kabir & Norrel from 5776A; Aarav from 5776T; Jerry from CMAA
 
-<img src="img/bubo_code.png" height="300">
-<img src="img/bubo_path1.png" height="300">
-<img src="img/bubo_path2.png" height="300">
+<img src="img/coro_code.png" height="300">
+<img src="img/coro_path.png" height="300">
+
+Think of Bubonic as where the code is written and you can see the path the robot takes, and Corona is a visualizer where code is sent to be drawn.
 
 ## Usage
-When you first install Bubonic from this link:
+When you first install Corona For Bubonic from this link:
 
-[https://github.com/glasseshead/bubonic_install](https://github.com/glasseshead/bubonic_install)
+[https://github.com/glasseshead/bubonic-corona_install](https://github.com/glasseshead/bubonic-corona_install)
 
 You should recieve a .zip file in either `Downloads` or your specified file location. 
 
 Go to that file location in your filesystem, and unzip the file.
 
-After unzipping the file, you can go to `bubonic_linux`, where you should be able to access the file by making sure it is set to `"Run as a program"` or any similar settings. 
+After unzipping the file, you can go to `main`, where you should be able to access the file by making sure it is set to `"Run as a program"` or any similar settings. 
 
-After doing so, you may peruse the below information to assist you in using Bubonic. Your `path.cpp` file will be in the home directory under the folder `bubonicOutput`.
+After doing so, you may peruse the below information to assist you in using Corona For Bubonic. Your `path.cpp` file will be in the same directory as `main`.
 
 Have fun!
 
 ## Features
 - **Path and pose visualizer**
-  - By plotting points, a line will appear tracing the path your robot theoretically takes
-
-- **Field path plotting**  
-  - Real time interactive path plotting using a Python-powered interface
+  - Instead of plotting points, the user puts their program in path.cpp, where it is parsed into data
+  - Using Bit-Boundary Block Transfer (blit), the code draws the path the robot theoretically takes
 
 - **Visual rendering**  
   - VEX V5 blank field rendered in high quality supporting:
@@ -37,40 +36,12 @@ Have fun!
    - Field Perimeter
     - Checkerboarded tiles
     - Path rendering
-      - Lines from point to point in red
-      - Currently drawing line in cyan
+      - Lines from point to point in green
 
-- **Automated autonomous code programming**
-  - Bubonic is capable of automatically writing autonomous code for PROS and LemLib
-  - Same format as Arson structures
-
-- **Rotational control**
-  - Capability to rotate in 1 degree increments/decrements
-  - Capability to rotate in 90 degree increments/decrements
-
-- **High-frequency enhanced telemetry**
-  - Optimized for low flicker and high refresh rate
-  - Integrated telemetry in program
-  - Non-terminal, graphical
-
-- **Pose zeroing support**
-  - Capability to zero the current pose and writing zeroing data to file
-
-- **Data clearing support**
-  - Capability to clear all contents of pose data and code
-
-- **Arson, Yaay! and Plague? Where? compatability**
-  - Designed to be compatible with Arson- and Plague-based structures and can be modifiable for other architectures
-
-## Controls
-- Add point = Left Mouse Click
-- Rotate robot pose by 1° = A/D
-- Rotate robot pose by 90° = Shift + A/D
-- Reset origin/zero pose = E
-- Zero current heading = S
-- Clear pose data = Z
-- Clear code poses = Q
+- **Plague? Where? and Bubonic compatability**
+  - Designed to be compatible Plague? Where? and Bubonic for assisted autonomous programming
 
 ## Notes
-- inPerTick is already set, do not change it at all
+- You are required to put in a path in path.cpp. A sample path is provided.
+- Code does not recognize starting points, so it will start from the top left corner centered to the tile.
 - May require pygame dependencies
