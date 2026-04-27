@@ -39,19 +39,23 @@ def renderBot(robotPosX, robotPosY, robotPosTheta, canvas):
     # blit to canvas
     canvas.blit(rotated, rotatedrect)
 
-def renderPath(poses, canvas):
-    # fetch points
-    for i in range(1, len(poses)):
-        # draw line from previous logged point to last logged point
-        pygame.draw.line(canvas, (255, 0, 0), poses[i - 1][:2], poses[i][:2], 3)
-
-        # draw point for visibility
-        pygame.draw.circle(canvas, (255, 0, 0), poses[i - 1][:2], 5)
-
-    # if within boundary
-    if len(poses) > 0 and ((160 <= config.mouseXraw <= 640) and (80 <= config.mouseYraw <= 560)):
-        # draw cyan line to represent mouse pointing path
-        pygame.draw.line(canvas, (0, 255, 255), poses[-1][:2], (config.mouseXraw, config.mouseYraw), 3)
+def renderPath(points, canvas):
+    if not points:
+        return
+    
+    # convert points to screen coords and draw
+    for i in range(len(points)):
+        screenX = points[i]['x'] * config.tickPerIn + 160 + 40
+        screenY = points[i]['y'] * config.tickPerIn + 80 + 40
+        
+        # draw line to previous point
+        if i > 0:
+            prevX = points[i - 1]['x'] * config.tickPerIn + 160 + 40
+            prevY = points[i - 1]['y'] * config.tickPerIn + 80 + 40
+            pygame.draw.line(canvas, (215, 255, 104), (prevX, prevY), (screenX, screenY), 3)
+        
+        # point for visibility
+        pygame.draw.circle(canvas, (215, 255, 104), (int(screenX), int(screenY)), 5)
 
 def renderField(canvas):
     # background
@@ -61,5 +65,5 @@ def renderField(canvas):
     renderTiles(canvas)
     renderBot(config.robotPosX + 160, config.robotPosY + 80, config.robotPosTheta, canvas)
 
-    # render path
-    renderPath(config.poseData, canvas)
+    # render planned points
+    renderPath(config.pathPoints, canvas)
