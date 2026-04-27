@@ -19,13 +19,7 @@ pygame.display.set_caption('Corona for Bubonic')
 # read path from path.cpp
 config.pathPoints = cppread.cppRead()
 
-while True:
-    # getting raw mouse values
-    config.mouseXraw, config.mouseYraw = pygame.mouse.get_pos()
-
-    # to prevent theta getting too high
-    config.robotPosTheta = config.robotPosTheta % 360
-    
+while True:    
     # boundary check
     boundary.bounds()
 

@@ -8,9 +8,6 @@ fpsClock = pygame.time.Clock()
 canvasX, canvasY = 800, 640
 canvasBGColour = (66, 77, 79)
 
-# initialize mouse values
-mouseXraw, mouseYraw = 0.0, 0.0
-
 # initialize robot position values
 robotPosX, robotPosY, robotPosTheta = 0.0, 0.0, 0.0
 
