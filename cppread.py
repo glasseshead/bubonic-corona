@@ -4,7 +4,12 @@ import config
 import relativity
 
 def cppRead():
-    with open(os.path.join(os.path.dirname(__file__), 'path.cpp'), 'r') as f:
+    # find path.cpp
+    cpp_path = 'path.cpp'
+    if not os.path.exists(cpp_path):
+        cpp_path = os.path.join(os.path.dirname(__file__), 'path.cpp')
+    
+    with open(cpp_path, 'r') as f:
         content = f.read()
 
     # reset points list
