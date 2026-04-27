@@ -11,7 +11,6 @@ import cppread
 pygame.init()
 
 # set clock
-config.fpsClock = pygame.time.Clock()
 
 # set up canvas
 canvas = pygame.display.set_mode((config.canvasX, config.canvasY))
